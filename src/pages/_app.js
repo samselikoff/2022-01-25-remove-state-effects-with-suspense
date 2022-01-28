@@ -15,8 +15,9 @@ function App({ Component, pageProps }) {
   return (
     <div>
       <Header />
-
-      <Component {...pageProps} />
+      <Suspense fallback={<Spinner />}>
+        <Component {...pageProps} />
+      </Suspense>
     </div>
   );
 }
